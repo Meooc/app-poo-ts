@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var adresse_1 = require("./adresse");
+var personne_1 = require("./personne");
+var enseignant_1 = require("./enseignant");
+var adressePersonne = new adresse_1.Adresse("123 Rue de la Ville ", "12345 ", "Villeville ");
+var personne = new personne_1.Personne("Doe ", "John ", adressePersonne);
+console.log("Nom: " + personne.getNom());
+console.log("Prénom: " + personne.getPrenom());
+console.log("Adresse: " + personne.getAdresse().getFullAdresse());
+var nouvelleAdresse = new adresse_1.Adresse("456 Nouvelle Rue ", "67890 ", "Nouvelleville ");
+personne.setAdresse(nouvelleAdresse);
+console.log("Nouvelle adresse : " + personne.getAdresse().getFullAdresse());
+console.log("Informations complètes : " + personne.getFullInfos());
+console.log("-----------------------------------------------");
+var adresseEnseignant = new adresse_1.Adresse("456 Rue de l'École ", "67890 ", "Écoleville ");
+var enseignant = new enseignant_1.Enseignant("Professeur ", "Jean ", adresseEnseignant, "Mathématiques ", "Titulaire ");
+console.log("Informations complètes : ", enseignant.getFullInfos());
